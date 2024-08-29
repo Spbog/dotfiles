@@ -35,7 +35,7 @@ git clone https://github.com/Spbog/dotfiles.git
 ```
 Потом установите все нужные пакеты
 ```
-yay -S hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww --noconfirm
+yay -S hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim grimblast-git pulseaudio-ctl --noconfirm
 
 pip3 install colorz --user --break-system-packages
 ```
