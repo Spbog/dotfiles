@@ -72,6 +72,7 @@ else
     cp -r ~/dotfiles/fonts/* ~/.fonts
     mkdir ~/Wallpapers
     cp -r ~/dotfiles/Wallpapers/* ~/Wallpapers
+    chmod +x ~/.config/
     sleep 4
     rm -rf ~/dotfiles
 
