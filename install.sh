@@ -67,7 +67,6 @@ else
     clear
 
     echo "Установка самих дотфайлов"
-    git clone https://github.com/Spbog/dotfiles.git
     cp -r ~/dotfiles/config/* ~/.config
     cp -r ~/dotfiles/fonts/* ~/.fonts
     mkdir ~/Wallpapers
