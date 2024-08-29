@@ -1,0 +1,150 @@
+@import "colors-waybar.css";
+
+* {
+    transition: none;
+    box-shadow: none;
+    font-family: Product Sans;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#waybar {
+    background: @background;
+    border-radius: 0px;
+    border: none;
+}
+
+#workspaces, #window {
+    border-radius: 13px;
+    margin: 6px 0;
+    margin-left: 6px;
+    padding: 0 10px;
+    font-weight: 500;
+    background: @color8;
+    color: @foreground;
+    transition: all 0.3s ease-out;
+}
+
+#window {
+    padding: 0 12px;
+}
+
+window#waybar.empty #window {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  background: transparent;
+}
+
+#workspaces button {
+    margin: 0 3px;
+    padding: 0;
+    color: @foreground;
+    background: none;
+    border:none;
+    transition: all 0.3s ease-out;
+}
+
+#workspaces button.visible {
+}
+
+#workspaces button.active {
+    color: @color2;
+}
+
+#workspaces button.urgent * {
+    color: @color6;
+}
+
+
+#mode, #bluetooth, #cpu, #disk, #memory, #temperature, #network, #pulseaudio, #idle_inhibitor, #backlight, #mpd, #clock, #temperature, #language, #custom-powermenu {
+    margin: 6px 0px;
+    padding: 0 11px;
+    margin-right: 6px;
+    border-radius: 13px;
+    min-width: 8px;
+    background-color: @color8;
+    color: @foreground;
+}
+
+#language {
+    min-width: 16px;
+}
+
+#pulseaudio, #backlight {
+    min-width: 64px;
+}
+
+#clock {
+    margin: 8px 0;
+    background-color: transparent;
+    color: @foreground;
+    padding: 0 0;
+  }
+
+#tray {
+    padding: 0 7px;
+    margin: 6px 0;
+    margin-right: 6px;
+    border-radius: 13px;
+    background-color: @color8;
+}
+
+#language {
+    min-width: 16px;
+}
+
+#pulseaudio, #backlight {
+    min-width: 64px;
+}
+
+#custom-weather {
+    margin: 6px 0;
+    border-radius: 13px;
+    margin-left: 6px;
+    padding: 0 20px;
+    background-color: transparent;
+    color: @foreground;
+}
+
+#tray * {
+    padding: 0 4px;
+}
+  
+#tray *:first-child {
+    border-left: none;
+}
+
+#battery {
+    margin: 6px 0px;
+    padding: 0 11px;
+    margin-right: 6px;
+    border-radius: 13px;
+    min-width: 8px;
+    background-color: transparent;
+    color: @white;
+}
+
+#battery.full {
+    font-size: 0px;
+    margin: 0px 0px 0px 0px;
+    padding: 0 0px;
+    background-color: transparent;
+}
+
+#battery.charging {
+    color: #4A9044;
+}
+
+#battery.warning {
+    color: #99A044;
+} 
+
+#battery.critical {
+    color: #9A6744;
+}
+
+tooltip {
+     border-radius: 10px;
+     background-color: @background;
+}
