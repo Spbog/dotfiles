@@ -20,7 +20,7 @@ configuration {
 }
 
 /*****----- Global Properties -----*****/
-@import                          "/home/spbog/.cache/wal/colors-rofi-dark.rasi"
+@import                          "~/.cache/wal/colors-rofi-dark.rasi"
 
 * {
     border-colour:               var(selected);
