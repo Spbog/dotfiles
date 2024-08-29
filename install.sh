@@ -68,6 +68,7 @@ else
 
     echo "Установка самих дотфайлов"
     cp -r ~/dotfiles/config/* ~/.config
+    mkdir -p ~/.fonts
     cp -r ~/dotfiles/fonts/* ~/.fonts
     mkdir ~/Wallpapers
     cp -r ~/dotfiles/Wallpapers/* ~/Wallpapers
