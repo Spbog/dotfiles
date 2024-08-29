@@ -46,7 +46,7 @@ else
     
     echo "Установка основных пакетов..."
     sleep 1.5
-    yay -S hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim grimblast-git --noconfirm
+    yay -S hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim grimblast-git pulseaudio-ctl --noconfirm
 
     clear
     
