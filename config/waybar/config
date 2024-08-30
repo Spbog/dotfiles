@@ -143,9 +143,9 @@
         "default": ["", "", ""]
         },
     "scroll-step": 3,
-    "on-scroll-up": "/usr/bin/pulseaudio-ctl down",
-    "on-scroll-down": "/usr/bin/pulseaudio-ctl up",
-    "on-click": "pulseaudio-ctl mute",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
+    "on-click": "pctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-click-right": "pavucontrol"
     },
 
