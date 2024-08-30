@@ -52,6 +52,8 @@ else
     else
 	clear
 	echo "Не все пакеты были установлены. Чекни yay.log и фиксь почему не установилось. Можешь открыть issue с логами"
+ 	echo "Yay Logs:"
+ 	cat yay.log
 	exit
     fi
 
@@ -65,10 +67,12 @@ else
 
     echo "Установка дотфайлов"
     chmod +rwx .
-    cp -r ~/dotfiles/config/* ~/.config
-    cp -r ~/dotfiles/fonts/* ~/.fonts
+    mkdir ~/.config
+    cp -r config/* ~/.config
+    mkdir ~/.fonts
+    cp -r fonts/* ~/.fonts
     mkdir ~/Wallpapers
-    cp -r ~/dotfiles/Wallpapers/* ~/Wallpapers
+    cp -r Wallpapers/* ~/Wallpapers
     sleep 1
 
     echo "Дотфайлы установлены. Создаю симлинки на файлы."
@@ -85,5 +89,7 @@ else
     echo "Установка завершена! Приятного пользования моими дотфайлами:)"
     echo "В случае выяснений проблем, пожалуйста, оставьте issue в гитхабе"
     echo "https://github.com/Spbog/dotfiles"
+    echo ""
+    echo "Не забудьте удалить этот репозиторий"
     rm -rf ~/dotfiles #delete useless files after installation in most cases
 fi
