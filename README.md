@@ -33,19 +33,29 @@ sh install.sh
 ```
 git clone https://github.com/Spbog/dotfiles.git
 ```
-Потом установите все нужные пакеты
+Затем установите все нужные пакеты.
 ```
-yay -S hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim grimblast-git pulseaudio-ctl --noconfirm
+yay -S hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp pulseaudio-ctl --noconfirm
 
 pip3 install colorz --user --break-system-packages
 ```
+Измените разрешения файлов во избежании ошибок.
+```
+chmod --recursive +rwx dotfiles/* 
+```
 Переместите файлы из config/ в ~/.config/, а fonts/ в ~/.fonts/. 
-Создайте папку ~/Wallpapers и скиньте туда свои обои.
-Создайте тему из обоев командой
+```
+cd dotfiles && cp -r config ~/.config && cp -r fonts ~/.fonts
+```
+Скопируйте папку с обоями Wallpapers в ~/Wallpapers и затем изменяйте её как хотите.
+```
+cp -r Wallpapers ~/Wallpapers
+```
+Создайте тему из обоев командой.
 ```
 wal -i ~/Wallpapers/file --saturate 0.2 --backend colorz
 ```
-После сделайте ссылки на файлы из cache в config командами
+После сделайте ссылки на файлы из cache в config командами.
 ```
 ln ~/.cache/wal/colors-waybar.css ~/.config/waybar/colors-waybar.css
 ln ~/.cache/wal/hyprlock.conf ~/.config/hypr/hyprlock.conf
