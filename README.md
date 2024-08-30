@@ -44,6 +44,10 @@ pip3 install colorz --user --break-system-packages
 ```
 chmod --recursive +rwx dotfiles/* 
 ```
+Измените и скопируйте аватар профился avatar.jpg
+```
+cp avatar.jpg ~/avatar.jpg
+```
 Переместите файлы из config/ в ~/.config/, а fonts/ в ~/.fonts/. 
 ```
 cd dotfiles && cp -r config ~/.config && cp -r fonts ~/.fonts
@@ -61,6 +65,10 @@ wal -i ~/Wallpapers/file --saturate 0.2 --backend colorz
 ln -sf ~/.cache/wal/colors-waybar.css ~/.config/waybar/colors-waybar.css
 ln -sf ~/.cache/wal/hyprlock.conf ~/.config/hypr/hyprlock.conf
 ln -sf ~/.cache/wal/mako-config ~/.config/mako/config
+```
+Удалите репозиторий для освобождения места
+```
+cd .. && rm -rf dotfiles/
 ```
 ## Хоткеи
 | Хоткей      | Что делает   |
