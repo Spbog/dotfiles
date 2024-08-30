@@ -1,19 +1,18 @@
 #!/bin/bash
 
 if [[ $EUID -eq 0 ]]; then
-    echo "Скрипт запущен под рут! Выхожу..."
+    echo "Скрипт запущен под рутом! Выхожу..."
     exit
 fi
 
 clear
 
 if yay -Q &> /dev/null; then
-    echo "yay уже установлен."
+    echo ""
 else
-    read -p "Yay не установлен! вы хотите установить его? (y/n) " yays
+    read -p "Yay не установлен! вы хотите установить его? (y/N) " yays
     if [ "$yays" != "y" ]; then
-	echo "Установка yay отменена. Следовательно, я не могу"
-	echo "продолжить установку дотфайлов."
+	echo "pkill install.sh"
     else
 	git clone https://aur.archlinux.org/yay.git
 	cd yay/
@@ -22,13 +21,12 @@ else
 fi
 
 
-echo "Добро пожаловать в установщик дотфайлов спбога!"
+echo "Добро пожаловать в установщик дотфайлов сапога!"
 echo
-echo "Перед установкой следует убедиться, что base-devel установлен,"
-echo "а сама система обновлена."
+echo "Вы уверены что у вас установлен base-devel, и система is up-to-date?"
 echo
 
-read -p "Вы хотите начать установку? (y/n)" proceed
+read -p "Вы хотите начать установку? (y/N)" proceed
 echo
 
 if [ "$proceed" != "y" ]; then
@@ -41,9 +39,9 @@ else
 	echo "Swaync не удален, либо собран вручную. Пожалуйста, удалите его"
 	exit
     else
-	echo "swaync нету."
+	echo ""
     fi
-    
+    #дохуя иф эльзов
     echo "Установка основных пакетов..."
     sleep 1.5
     yay -S hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim grimblast-git pulseaudio-ctl --noconfirm
@@ -54,7 +52,7 @@ else
 	echo "Установка завершена."
     else
 	clear
-	echo "Что-то пошло не так, и пакет не установлен."
+	echo "Не все пакеты были установлены. Чекни логи и фиксь почему не установилось"
 	exit
     fi
 
@@ -67,27 +65,25 @@ else
     clear
 
     echo "Установка самих дотфайлов"
-    cp -r ~/dotfiles/config/* ~/.config
-    mkdir -p ~/.fonts
-    cp -r ~/dotfiles/fonts/* ~/.fonts
-    mkdir ~/Wallpapers
-    cp -r ~/dotfiles/Wallpapers/* ~/Wallpapers
-    chmod +x ~/.config/
-    sleep 4
-    rm -rf ~/dotfiles
+    chmod +rwx .
+    cp -r config/* ~/.config
+    cp -r ~fonts/* ~/.fonts
+    cp -r dotfiles/Wallpapers/* ~/Wallpapers
+    sleep 1
 
-    echo "Дотфайлы установлены. Создаю ссылки на файлы."
+    echo "Дотфайлы установлены. Создаю симлинки на файлы."
 
     sleep 2
     
     wal -i ~/Wallpapers/Wall.jpg --saturate 0.2 --backend colorz
-    ln ~/.cache/wal/colors-waybar.css ~/.config/waybar/colors-waybar.css
-    ln ~/.cache/wal/hyprlock.conf ~/.config/hypr/hyprlock.conf
-    ln ~/.cache/wal/mako-config ~/.config/mako/config
+    ln -sf ~/.cache/wal/colors-waybar.css ~/.config/waybar/colors-waybar.css
+    ln -sf ~/.cache/wal/hyprlock.conf ~/.config/hypr/hyprlock.conf
+    ln -sf ~/.cache/wal/mako-config ~/.config/mako/config
 
     clear
 
     echo "Установка завершена! Приятного пользования моими дотфайлами:)"
     echo "В случае выяснений проблем, пожалуйста, оставьте issue в гитхабе"
     echo "https://github.com/Spbog/dotfiles"
+    rm -rf ~/dotfiles #delete useless files after installation in most cases
 fi

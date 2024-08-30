@@ -1,8 +1,0 @@
-#!/bin/bash
-
-dir="$HOME/pics" # тут измени на нужную папку
-
-time=$(date +%Y-%m-%d-%H-%M-%S)
-file="${dir}/screenshot_${time}_${RANDOM}.png"
-
-grim - | tee $file | wl-copy
