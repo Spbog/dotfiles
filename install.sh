@@ -68,6 +68,7 @@ else
     chmod +rwx .
     cp -r config/* ~/.config
     cp -r ~fonts/* ~/.fonts
+    mkdir ~/Wallpapers
     cp -r dotfiles/Wallpapers/* ~/Wallpapers
     sleep 1
 
