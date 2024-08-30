@@ -66,7 +66,8 @@ else
     clear
 
     echo "Установка дотфайлов"
-    chmod +rwx .
+    chmod --recursive +rwx .
+    cp avatar.jpg ~/avatar.jpg
     mkdir ~/.config
     cp -r config/* ~/.config
     mkdir ~/.fonts
