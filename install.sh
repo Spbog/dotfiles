@@ -66,10 +66,10 @@ else
 
     echo "Установка самих дотфайлов"
     chmod +rwx .
-    cp -r config/* ~/.config
-    cp -r ~fonts/* ~/.fonts
+    cp -r ~/dotfiles/config/* ~/.config
+    cp -r ~/dotfiles/fonts/* ~/.fonts
     mkdir ~/Wallpapers
-    cp -r dotfiles/Wallpapers/* ~/Wallpapers
+    cp -r ~/dotfiles/Wallpapers/* ~/Wallpapers
     sleep 1
 
     echo "Дотфайлы установлены. Создаю симлинки на файлы."
