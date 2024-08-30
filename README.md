@@ -44,6 +44,10 @@ pip3 install colorz --user --break-system-packages
 ```
 chmod --recursive +rwx dotfiles/* 
 ```
+Измените и скопируйте аватар профился avatar.jpg
+```
+cp avatar.jpg ~/avatar.jpg
+```
 Переместите файлы из config/ в ~/.config/, а fonts/ в ~/.fonts/. 
 ```
 cd dotfiles && cp -r config ~/.config && cp -r fonts ~/.fonts
