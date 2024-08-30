@@ -18,6 +18,7 @@ __Реворк моих старых дотфайлов__
 |Notifications | Mako     | 
 
 ## Установка
+### Все действия выполняются от имени обычного пользователя
 Скопируйте дотфайлы командой
 ```
 git clone https://github.com/Spbog/dotfiles.git
@@ -55,11 +56,11 @@ cp -r Wallpapers ~/Wallpapers
 ```
 wal -i ~/Wallpapers/file --saturate 0.2 --backend colorz
 ```
-После сделайте ссылки на файлы из cache в config командами.
+После сделайте симлинки на файлы из .cache в .config командами.
 ```
-ln ~/.cache/wal/colors-waybar.css ~/.config/waybar/colors-waybar.css
-ln ~/.cache/wal/hyprlock.conf ~/.config/hypr/hyprlock.conf
-ln ~/.cache/wal/mako-config ~/.config/mako/config
+ln -sf ~/.cache/wal/colors-waybar.css ~/.config/waybar/colors-waybar.css
+ln -sf ~/.cache/wal/hyprlock.conf ~/.config/hypr/hyprlock.conf
+ln -sf ~/.cache/wal/mako-config ~/.config/mako/config
 ```
 ## Хоткеи
 | Хоткей      | Что делает   |

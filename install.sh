@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ $EUID -eq 0 ]]; then
-    echo "Скрипт запущен под рутом! Выхожу..."
+    echo "Запустите скрипт от имени обычного пользователя!"
     exit
 fi
 
@@ -41,10 +41,9 @@ else
     else
 	echo ""
     fi
-    #дохуя иф эльзов
-    echo "Установка основных пакетов..."
+    echo "Установка зависимостей..."
     sleep 1.5
-    yay -S hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim grimblast-git pulseaudio-ctl --noconfirm
+    yay -S hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim grimblast-git pulseaudio-ctl --noconfirm > yay.log
 
     clear
     
@@ -52,7 +51,7 @@ else
 	echo "Установка завершена."
     else
 	clear
-	echo "Не все пакеты были установлены. Чекни логи и фиксь почему не установилось"
+	echo "Не все пакеты были установлены. Чекни yay.log и фиксь почему не установилось. Можешь открыть issue с логами"
 	exit
     fi
 
@@ -64,7 +63,7 @@ else
 
     clear
 
-    echo "Установка самих дотфайлов"
+    echo "Установка дотфайлов"
     chmod +rwx .
     cp -r ~/dotfiles/config/* ~/.config
     cp -r ~/dotfiles/fonts/* ~/.fonts
@@ -76,7 +75,7 @@ else
 
     sleep 2
     
-    wal -i ~/Wallpapers/Wall.jpg --saturate 0.2 --backend colorz
+    wal -i ~/Wallpapers/Leaves.jpg --saturate 0.2 --backend colorz
     ln -sf ~/.cache/wal/colors-waybar.css ~/.config/waybar/colors-waybar.css
     ln -sf ~/.cache/wal/hyprlock.conf ~/.config/hypr/hyprlock.conf
     ln -sf ~/.cache/wal/mako-config ~/.config/mako/config
