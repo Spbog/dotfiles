@@ -62,6 +62,10 @@ ln -sf ~/.cache/wal/colors-waybar.css ~/.config/waybar/colors-waybar.css
 ln -sf ~/.cache/wal/hyprlock.conf ~/.config/hypr/hyprlock.conf
 ln -sf ~/.cache/wal/mako-config ~/.config/mako/config
 ```
+Удалите репозиторий для освобождения места
+```
+cd .. && rm -rf dotfiles/
+```
 ## Хоткеи
 | Хоткей      | Что делает   |
 | ----------- | ----------- 
