@@ -3,9 +3,11 @@ if [[ $EUID -eq 0 ]]; then
 	echo "Запустите скрипт от имени обычного пользователя!"
 	exit 1
 fi
+rm ~/spbog-dotfiles-install.log
+echo "Установка необходимых компонентов для работы скрипта"
 echo "Pacman logs:" >> ~/spbog-dotfiles-install.log
 echo "-----------------" >> ~/spbog-dotfiles-install.log
-sudo pacman -S --needed base-devel git >> ~/spbog-dotfiles-install.log
+sudo pacman -Syy --needed base-devel git >> ~/spbog-dotfiles-install.log
 if yay --version &> /dev/null; then
 	cat /dev/null
 else
@@ -49,23 +51,35 @@ if [[ "$proceed" == "y" || "$proceed" == "Y" || "$proceed" == "" ]]; then
  		echo "Логи :"
  	cat ~/spbog-dotfiles-install.log
 	exit 1
+	fi
+	echo "Настройка PipeWire"
+	echo "PipeWire systemd logs:" >> ~/spbog-dotfiles-install.log
+	echo "------------------------" >> ~/spbog-dotfiles-install.log
+	systemctl --user enable --now pipewire.socket pipewire-pulse.socket wireplumber.service >> ~/spbog-dotfiles-install.log
+	systemctl --user enable --now pipewire.service >> ~/spbog-dotfiles-install.log
+	echo "Установка colorz для pywal..."
+	echo "colorz pip3 logs:" >> ~/spbog-dotfiles-install.log
+	echo "---------------------" >> ~/spbog-dotfiles-install.log
+	pip3 install colorz --user --break-system-packages >> ~/spbog-dotfiles-install.log
+	echo "Установка дотфайлов..."
+	cp avatar.jpg ~/avatar.jpg
+	mkdir -p ~/.config ~/.fonts ~/Wallpapers
+	cp -r config/* ~/.config
+	cp -r fonts/* ~/.fonts
+	cp -r Wallpapers/* ~/Wallpapers
+	echo "Дотфайлы установлены. Создаю симлинки на файлы..."
+	wal -i ~/Wallpapers/Leaves.jpg --saturate 0.2 --backend colorz
+	ln -sf ~/.cache/wal/colors-waybar.css ~/.config/waybar/colors-waybar.css
+	ln -sf ~/.cache/wal/hyprlock.conf ~/.config/hypr/hyprlock.conf
+	ln -sf ~/.cache/wal/mako-config ~/.config/mako/config
+	echo "Установка завершена! Приятного пользования моими дотфайлами:)"
+	echo "В случае выяснений проблем, пожалуйста, оставьте issue в гитхабе"
+	echo "https://github.com/Spbog/dotfiles"
+	#cd .. && rm -rf dotfiles/ #delete useless files after installation
+elif [[ "$proceed" == "n" || "$proceed" == "N" ]]; then
+	echo "Установка отменена."
+	exit 1
+else
+	echo "Неизвестный ввод $proceed"
+	exit 2
 fi
-echo "Установка colorz для pywal..."
-echo "colorz pip3 logs:" >> ~/spbog-dotfiles-install.log
-echo "---------------------" >> ~/spbog-dotfiles-install.log
-pip3 install colorz --user --break-system-packages >> ~/spbog-dotfiles-install.log
-echo "Установка дотфайлов..."
-cp avatar.jpg ~/avatar.jpg
-mkdir -p ~/.config ~/.fonts ~/Wallpapers
-cp -r config/* ~/.config
-cp -r fonts/* ~/.fonts
-cp -r Wallpapers/* ~/Wallpapers
-echo "Дотфайлы установлены. Создаю симлинки на файлы..."
-wal -i ~/Wallpapers/Leaves.jpg --saturate 0.2 --backend colorz
-ln -sf ~/.cache/wal/colors-waybar.css ~/.config/waybar/colors-waybar.css
-ln -sf ~/.cache/wal/hyprlock.conf ~/.config/hypr/hyprlock.conf
-ln -sf ~/.cache/wal/mako-config ~/.config/mako/config
-echo "Установка завершена! Приятного пользования моими дотфайлами:)"
-echo "В случае выяснений проблем, пожалуйста, оставьте issue в гитхабе"
-echo "https://github.com/Spbog/dotfiles"
-#cd .. && rm -rf dotfiles/ #delete useless files after installation
