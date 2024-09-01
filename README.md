@@ -20,53 +20,62 @@ __Реворк моих старых дотфайлов__
 | Notifications | Mako             | 
 
 ## Автоматическая установка
-### Все действия выполняются от имени обычного пользователя
+Установите _git_ и _base-devel_:
+```sh
+$ sudo pacman -Syy --needed git base-devel
+```
 Скопируйте дотфайлы:
 ```sh
-git clone https://github.com/Spbog/dotfiles.git
+$ git clone https://github.com/Spbog/dotfiles.git
 ```
 Запустите скрипт внутри командой:
 ```sh
-./install.sh
+$ ./install.sh
 ```
 
 ## Ручная установка
-**Убедитесь**, что у вас имеется _**yay**_.
-Скопируйте дотфайлы:
+Установите _git_ и _base-devel_:
 ```sh
-git clone https://github.com/Spbog/dotfiles.git
+$ sudo pacman -Syy --needed git base-devel
+```
+Скопируйте дотфайлы и перейдите в директорию с ними:
+```sh
+$ git clone https://github.com/Spbog/dotfiles.git && cd dotfiles/
+```
+Установите _yay_:
+```sh
+$ git clone https://aur.archlinux.org/yay.git && cd yay/ && makepkg -si
 ```
 Установите зависимости:
 ```sh
-yay -S hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp pipewire wireplumber alacritty mako emacs nautilus --noconfirm
-
-pip3 install colorz --user --break-system-packages
+$ yay -S hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp pipewire wireplumber alacritty mako emacs nautilus --noconfirm
+$ pip3 install colorz --user --break-system-packages
 ```
 Измените и скопируйте аватар профиля _avatar.jpg_
 ```sh
-cp avatar.jpg ~/avatar.jpg
+$ cp avatar.jpg ~/avatar.jpg
 ```
 Переместите файлы из _config/_ в _~/.config/_, а _fonts/_ в _~/.fonts/_. 
 ```sh
-cd dotfiles && cp -r config ~/.config && cp -r fonts ~/.fonts
+$ cd dotfiles && cp -r config ~/.config && cp -r fonts ~/.fonts
 ```
 Скопируйте папку с обоями _"Wallpapers"_ в _~/Wallpapers_. Скопируйте туда любые обои.
 ```sh
-cp -r Wallpapers ~/Wallpapers
+$ cp -r Wallpapers ~/Wallpapers
 ```
 Создайте тему из обоев:
 ```sh
-wal -i ~/Wallpapers/file --saturate 0.2 --backend colorz
+$ wal -i ~/Wallpapers/file --saturate 0.2 --backend colorz
 ```
 После сделайте симлинки на файлы из _.cache_ в _.config_:
 ```sh
-ln -sf ~/.cache/wal/colors-waybar.css ~/.config/waybar/colors-waybar.css
-ln -sf ~/.cache/wal/hyprlock.conf ~/.config/hypr/hyprlock.conf
-ln -sf ~/.cache/wal/mako-config ~/.config/mako/config
+$ ln -sf ~/.cache/wal/colors-waybar.css ~/.config/waybar/colors-waybar.css
+$ ln -sf ~/.cache/wal/hyprlock.conf ~/.config/hypr/hyprlock.conf
+$ ln -sf ~/.cache/wal/mako-config ~/.config/mako/config
 ```
-Удалите репозиторий для освобождения места
+Удалите репозиторий для освобождения места:
 ```sh
-cd .. && rm -rf dotfiles/
+$ cd .. && rm -rf dotfiles/
 ```
 ## Хоткеи
 | Хоткей                        | Что делает  |

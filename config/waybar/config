@@ -100,7 +100,7 @@
     },
 
     "battery": {
-    	"format": "{capacity}%",
+	"format": "{capacity}%",
 	"interval": 5,
 	"tooltip-format": "Осталось {time}\nСостояние {health}%",
 	"format-time": "{H}ч {M}м",
@@ -147,10 +147,10 @@
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-click-right": "pavucontrol"
-    // IF U USE PULSEAUDIO
-    // "on-scroll-up": "pulseaudio-ctl up", 
-    // "on-scroll-down": "pulseaudio-ctl down",
-    // "on-click": "pulseaudio-ctl mute",
+    // IF YOU USE PULSEAUDIO
+    // "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1%", 
+    // "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -1%",
+    // "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     },
 
     "hyprland/workspaces": {
@@ -175,12 +175,6 @@
     },
 
     // CUSTOM MODULES
-
-     "custom/launcher": {
-        "format": "",
-        "on-click": "~/.config/rofi/bin/launcher &",
-        "tooltip": false
-    },
 
     "custom/weather": {
         "format": "{}",
