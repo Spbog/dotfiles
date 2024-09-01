@@ -3,11 +3,13 @@
 city=
 
 # Save current IFS
+
 SAVEIFS=$IFS
 
 # Change IFS to new line.
+
 IFS=$'\n'
-weather=($(cat $cachedir/$cachefile)
+weather=($(cat $cachedir/$cachefile))
 
 # Restore IFSClear
 
@@ -15,6 +17,7 @@ IFS=$SAVEIFS
 temperature=$(echo ${weather[2]} | sed -E 's/([[:digit:]]+)\.\./\1 to /g')
 
 #echo ${weather[1]##*,}
+
 # https://fontawesome.com/icons?s=solid&c=weather
 
 case $(echo ${weather[1]##*,} | tr '[:upper:]' '[:lower:]') in
