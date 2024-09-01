@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo "GitHub разработчика: https://github.com/Spbog/dotfiles"
 if [[ $EUID -eq 0 ]]; then
     echo "Запустите скрипт от имени обычного пользователя!"
     exit
@@ -8,11 +8,11 @@ fi
 clear
 
 if yay -Q &> /dev/null; then
-    echo ""
+    echo "yay OK!"
 else
     read -p "Yay не установлен! вы хотите установить его? (y/N) " yays
     if [ "$yays" != "y" ]; then
-	echo "pkill install.sh"
+	echo "Установка отменена."
     else
 	git clone https://aur.archlinux.org/yay.git
 	cd yay/
@@ -36,10 +36,10 @@ else
     yay -R rofi --noconfirm
     yay -R swaync --noconfirm
     if yay -Q swaync &> /dev/null; then
-	echo "Swaync не удален, либо собран вручную. Пожалуйста, удалите его"
+	echo "Swaync присутсвует в системе, пожалуйста удалите его. Возможно он собран вручную"
 	exit
     else
-	echo ""
+	echo "-swaync OK!"
     fi
     echo "Установка зависимостей..."
     sleep 1.5
@@ -51,21 +51,21 @@ else
 	echo "Установка завершена."
     else
 	clear
-	echo "Не все пакеты были установлены. Чекни yay.log и фиксь почему не установилось. Можешь открыть issue с логами"
- 	echo "Yay Logs:"
+	echo "Во время установки пакетов произошла какая-то ошибка, проверь логи (yay.log) и открой issue https://github.com/Spbog/dotfiles"
+ 	echo "Логи yay:"
  	cat yay.log
 	exit
     fi
 
-    echo "Установка colorz для pywal"
+    echo "Установка colorz для pywal.."
     pip3 install colorz --user --break-system-packages
-    echo "colorz установлен"
+    echo "colorz OK!"
 
     sleep 2
 
     clear
 
-    echo "Установка дотфайлов"
+    echo "Установка дотфайлов..."
     chmod --recursive +rwx .
     cp avatar.jpg ~/avatar.jpg
     mkdir ~/.config
@@ -76,7 +76,7 @@ else
     cp -r Wallpapers/* ~/Wallpapers
     sleep 1
 
-    echo "Дотфайлы установлены. Создаю симлинки на файлы."
+    echo "Дотфайлы установлены. Создаю симлинки на файлы..."
 
     sleep 2
     
