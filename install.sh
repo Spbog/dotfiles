@@ -43,7 +43,7 @@ else
     fi
     echo "Установка зависимостей..."
     sleep 1.5
-    yay -S hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim grimblast-git pulseaudio-ctl --noconfirm > yay.log
+    yay -S hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp pipewire wireplumber mako emacs nautilus --noconfirm > yay.log
 
     clear
     
@@ -66,7 +66,6 @@ else
     clear
 
     echo "Установка дотфайлов..."
-    chmod --recursive +rwx .
     cp avatar.jpg ~/avatar.jpg
     mkdir ~/.config
     cp -r config/* ~/.config
