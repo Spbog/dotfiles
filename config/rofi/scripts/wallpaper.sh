@@ -1,3 +1,4 @@
+#!/bin/bash
 export PATH="${PATH}:${HOME}/.local/bin/"
 dir="$HOME/.config/rofi/themes"
 theme="wallpaper"
