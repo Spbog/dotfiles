@@ -1,66 +1,83 @@
 #!/usr/bin/bash
+
+# Check if the script is run as root
 if [[ $EUID -eq 0 ]]; then
 	echo "Запустите скрипт от имени обычного пользователя!"
 	exit 1
 fi
+
+# Remove old log file
 rm ~/spbog-dotfiles-install.log
+
+# Install necessary components
 echo "Установка необходимых компонентов для работы скрипта"
 echo "Pacman logs:" >> ~/spbog-dotfiles-install.log
 echo "-----------------" >> ~/spbog-dotfiles-install.log
 sudo pacman -Syy --needed base-devel git >> ~/spbog-dotfiles-install.log
-if yay --version &> /dev/null; then
-	cat /dev/null
-else
+
+# Check if yay is installed, if not, prompt to install it
+if ! yay --version &> /dev/null; then
 	read -p "Yay не установлен! вы хотите установить его? (Y/n) " yayinstall
-	if [[ "$yayinstall" == "y" || "$yayinstall" == "Y" || "$yayinstall" == "" ]]; then
-        	git clone https://aur.archlinux.org/yay.git
-        	cd yay/
-        	makepkg -si
-	elif [[ "$yayinstall" == "n" || "$yayinstall" == "N" ]]; then
+	case "$yayinstall" in
+		[Yy]*|"")
+            	git clone https://aur.archlinux.org/yay.git
+		cd yay/
+		makepkg -si
+		;;
+        	[Nn]*)
 		echo "Установка отменена!"
 		exit 1
-	else
-        	echo "Неверный ввод $yayinstall"
+		;;
+		*)
+		echo "Неверный ввод $yayinstall"
 		exit 2
-    fi
+		;;
+	esac
 fi
 
 echo "Добро пожаловать в установщик дотфайлов сапога!"
+read -p "Вы хотите начать установку? (Y/n) " proceed
 
-read -p "Вы хотите начать установку? (Y/n)" proceed
-
-if [[ "$proceed" == "y" || "$proceed" == "Y" || "$proceed" == "" ]]; then
-	yay -R --noconfirm rofi swaync
-	if yay -Q swaync &> /dev/null; then
+case "$proceed" in
+	[Yy]*|"")
+		# Remove conflicting packages
+		yay -R --noconfirm rofi swaync
+		if yay -Q swaync &> /dev/null; then
 		echo "Swaync всё ещё присутсвует в системе, пожалуйста удалите его. Возможно он собран вручную"
 		exit 1
 	fi
 	if yay -Q rofi &> /dev/null; then
-	       	echo "rofi (x11) всё ещё присутсвует в системе, пожалуйста удалите его. Возможно он собран вручную"
-	       	exit 1
+		echo "rofi (x11) всё ещё присутсвует в системе, пожалуйста удалите его. Возможно он собран вручную"
+		exit 1
 	fi
+
+	# Install dependencies and update system
 	echo "Установка зависимостей и обновление системы..."
 	echo "Yay logs:" >> ~/spbog-dotfiles-install.log
-	echo "-------------"
+	echo "-------------" >> ~/spbog-dotfiles-install.log
 	sleep 0.5
-	yay -Syyu --verbose --noconfirm  hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp pipewire wireplumber mako emacs nautilus alacritty >> ~/spbog-dotfiles-install.log
-	if yay -Qq hyprlock &> hyprlock; then #Need to change
-		echo "Установка завершена."
-	else
+	yay -Syyu --verbose --noconfirm hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp pipewire wireplumber mako emacs nautilus alacritty >> ~/spbog-dotfiles-install.log
+	if ! yay -Qq hyprlock &> /dev/null; then
 		echo "Во время установки пакетов произошла какая-то ошибка, проверь логи (yay.log) и открой issue https://github.com/Spbog/dotfiles"
- 		echo "Логи :"
- 	cat ~/spbog-dotfiles-install.log
-	exit 1
+		echo "Логи :"
+		cat ~/spbog-dotfiles-install.log
+		exit 1
 	fi
+
+	# Configure PipeWire
 	echo "Настройка PipeWire"
 	echo "PipeWire systemd logs:" >> ~/spbog-dotfiles-install.log
 	echo "------------------------" >> ~/spbog-dotfiles-install.log
 	systemctl --user enable --now pipewire.socket pipewire-pulse.socket wireplumber.service >> ~/spbog-dotfiles-install.log
 	systemctl --user enable --now pipewire.service >> ~/spbog-dotfiles-install.log
+
+	# Install colorz for pywal
 	echo "Установка colorz для pywal..."
 	echo "colorz pip3 logs:" >> ~/spbog-dotfiles-install.log
 	echo "---------------------" >> ~/spbog-dotfiles-install.log
 	pip3 install colorz --user --break-system-packages >> ~/spbog-dotfiles-install.log
+
+	# Install dotfiles
 	echo "Установка дотфайлов..."
 	cp avatar.jpg ~/avatar.jpg
 	mkdir -p ~/.config ~/.fonts ~/Wallpapers
@@ -75,11 +92,14 @@ if [[ "$proceed" == "y" || "$proceed" == "Y" || "$proceed" == "" ]]; then
 	echo "Установка завершена! Приятного пользования моими дотфайлами:)"
 	echo "В случае выяснений проблем, пожалуйста, оставьте issue в гитхабе"
 	echo "https://github.com/Spbog/dotfiles"
-	#cd .. && rm -rf dotfiles/ #delete useless files after installation
-elif [[ "$proceed" == "n" || "$proceed" == "N" ]]; then
-	echo "Установка отменена."
-	exit 1
-else
-	echo "Неизвестный ввод $proceed"
-	exit 2
-fi
+	;;
+	[Nn]*)
+		echo "Установка отменена."
+		exit 1
+	;;
+	*)
+		echo "Неизвестный ввод $proceed"
+		exit 2
+	;;
+esac
+
