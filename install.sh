@@ -43,7 +43,7 @@ else
     fi
     echo "Установка зависимостей..."
     sleep 1.5
-    yay -S hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp pipewire wireplumber mako emacs nautilus --noconfirm > yay.log
+    yay -S hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp pipewire wireplumber mako emacs nautilus alacritty --noconfirm > yay.log
 
     clear
     
