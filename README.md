@@ -1,11 +1,11 @@
 # Дотфайлы сапога с Monet
 __Реворк моих старых дотфайлов__
 
-[Скрин 1](https://github.com/Spbog/dotfiles/blob/main/screen1.jpg)
+![Скрин 1](https://github.com/Spbog/dotfiles/blob/main/screen1.jpg)
 
-[Скрин 2](https://github.com/Spbog/dotfiles/blob/main/screen2.jpg)
+![Скрин 2](https://github.com/Spbog/dotfiles/blob/main/screen2.jpg)
 
-[Скрин 3](https://github.com/Spbog/dotfiles/blob/main/screen3.jpg)
+![Скрин 3](https://github.com/Spbog/dotfiles/blob/main/screen3.jpg)
 ## Что используется
 | Для чего      | Что используется |
 | ------------- | ---------------- |
@@ -27,7 +27,7 @@ git clone https://github.com/Spbog/dotfiles.git
 ```
 Запустите скрипт внутри командой:
 ```sh
-sh install.sh
+./install.sh
 ```
 
 ## Ручная установка
