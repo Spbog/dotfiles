@@ -189,8 +189,8 @@
 
     "custom/powermenu": {
         "format": "",
-        "on-click": "~/.config/rofi/bin/powermenu &",
-        "on-click-right": "~/.config/rofi/bin/powermenu &",
+        "on-click": "~/.config/rofi/scripts/powermenu.sh",
+        "on-click-right": "~/.config/rofi/scripts/powermenu.sh",
         "tooltip": false
     },
 }
