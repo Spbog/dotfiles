@@ -146,6 +146,7 @@
     "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-right": "pavucontrol"
     // IF U USE PULSEAUDIO
     // "on-scroll-up": "pulseaudio-ctl up", 
     // "on-scroll-down": "pulseaudio-ctl down",
