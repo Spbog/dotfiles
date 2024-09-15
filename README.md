@@ -12,6 +12,7 @@ __Реворк моих старых дотфайлов__
 | WM            | Hyprland         |
 | OS            | Arch Linux       |
 | Terminal      | Alacritty        |
+| Shell         | Zsh + Oh My Zsh  |
 | File Manager  | Nautilus         |
 | Text Editor   | Emacs            |
 | Launcher      | Rofi             |
