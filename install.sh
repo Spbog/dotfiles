@@ -56,7 +56,8 @@ case "$proceed" in
 	echo "Yay logs:" >> ~/spbog-dotfiles-install.log
 	echo "-------------" >> ~/spbog-dotfiles-install.log
 	sleep 0.5
-	yay -S --noconfirm hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp pipewire wireplumber mako emacs nautilus alacritty zoxide thefuck oh-my-posh  >> ~/spbog-dotfiles-install.log
+	yay -S --noconfirm hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp mako emacs nautilus alacritty zoxide thefuck oh-my-posh  >> ~/spbog-dotfiles-install.log
+#	yay -S --noconfirm pipewire wireplumber >> ~/spbog-dotfiles-install.log
 	if ! yay -Qq hyprlock &> /dev/null; then
 		echo "Во время установки пакетов произошла какая-то ошибка, проверь логи (yay.log) и открой issue https://github.com/Spbog/dotfiles"
 		echo "Логи :"
