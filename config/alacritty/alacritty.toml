@@ -2,5 +2,5 @@
 opacity = 0.6
 
 [font]
-normal = { family = "monospace", style = "Regular" }
+normal = { family = "CartographCF", style = "Regular" }
 size = 10

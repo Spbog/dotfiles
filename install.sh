@@ -85,7 +85,7 @@ case "$proceed" in
 	cp -r config/* ~/.config
 	cp -r fonts/* ~/.fonts
 	cp -r Wallpapers/* ~/Wallpapers
-	cp -r config/zsh/.oh-my-zsh ~/
+	cp -r config/zsh/.oh-my-zsh ~/.config
 	cp config/.zshrc ~/
 	cp config/omp.json ~/.config
 	echo "Дотфайлы установлены. Создаю симлинки на файлы..."
