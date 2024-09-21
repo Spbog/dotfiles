@@ -56,7 +56,7 @@ case "$proceed" in
 	echo "Yay logs:" >> ~/spbog-dotfiles-install.log
 	echo "-------------" >> ~/spbog-dotfiles-install.log
 	sleep 0.5
-	yay -Syyu --verbose --noconfirm hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp pipewire wireplumber mako emacs nautilus alacritty >> ~/spbog-dotfiles-install.log
+	yay -Syyu --verbose --noconfirm hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp pipewire wireplumber mako emacs nautilus alacritty zsh zoxide thefuck zsh-lsd oh-my-posh  >> ~/spbog-dotfiles-install.log
 	if ! yay -Qq hyprlock &> /dev/null; then
 		echo "Во время установки пакетов произошла какая-то ошибка, проверь логи (yay.log) и открой issue https://github.com/Spbog/dotfiles"
 		echo "Логи :"
@@ -64,6 +64,7 @@ case "$proceed" in
 		exit 1
 	fi
 
+	chsh -s /bin/zsh >> ~/spbog-dotfiles-install.log
 	# Configure PipeWire
 	echo "Настройка PipeWire"
 	echo "PipeWire systemd logs:" >> ~/spbog-dotfiles-install.log
@@ -84,12 +85,16 @@ case "$proceed" in
 	cp -r config/* ~/.config
 	cp -r fonts/* ~/.fonts
 	cp -r Wallpapers/* ~/Wallpapers
+	cp -r config/zsh/.oh-my-zsh ~/
+	cp config/.zshrc ~/
+	cp config/omp.json ~/.config
 	echo "Дотфайлы установлены. Создаю симлинки на файлы..."
 	wal -i ~/Wallpapers/Leaves.jpg --saturate 0.2 --backend colorz
 	ln -sf ~/.cache/wal/colors-waybar.css ~/.config/waybar/colors-waybar.css
 	ln -sf ~/.cache/wal/hyprlock.conf ~/.config/hypr/hyprlock.conf
 	ln -sf ~/.cache/wal/mako-config ~/.config/mako/config
 	echo "Установка завершена! Приятного пользования моими дотфайлами:)"
+	echo "Пожалуйста, сделайте reboot"
 	echo "В случае выяснений проблем, пожалуйста, оставьте issue в гитхабе"
 	echo "https://github.com/Spbog/dotfiles"
 	;;
