@@ -94,8 +94,8 @@ case "$proceed" in
 	ln -sf ~/.cache/wal/colors-waybar.css ~/.config/waybar/colors-waybar.css
 	ln -sf ~/.cache/wal/hyprlock.conf ~/.config/hypr/hyprlock.conf
 	ln -sf ~/.cache/wal/mako-config ~/.config/mako/config
-	read -p "Хотите удалить гит с дотфайлами, чтобы освободить место'? (да/нет): " confirm
-	    if [ "$confirm" = "да" ]; then
+	read -p "Хотите удалить гит с дотфайлами, чтобы освободить место'? (y/n): " confirm
+	    if [ "$confirm" = "y" ]; then
 		rm -rf "~/dotfiles"
 		echo "Директория с дотфайлами была удалена."
 	    else
