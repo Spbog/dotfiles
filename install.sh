@@ -86,8 +86,8 @@ case "$proceed" in
 	cp -r fonts/* ~/.fonts
 	cp -r Wallpapers/* ~/Wallpapers
 	cp -r config/zsh/.oh-my-zsh ~/.config
-	cp config/.zshrc ~/
-	cp config/omp.json ~/.config
+	cp config/zsh/.zshrc ~/
+	cp config/zsh/omp.json ~/.config
 	echo "Дотфайлы установлены. Создаю симлинки на файлы..."
 	wal -i ~/Wallpapers/Leaves.jpg --saturate 0.2 --backend colorz
 	ln -sf ~/.cache/wal/colors-waybar.css ~/.config/waybar/colors-waybar.css
