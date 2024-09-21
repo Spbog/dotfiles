@@ -47,7 +47,7 @@ case "$proceed" in
 		exit 1
 	fi
 	if yay -Q rofi &> /dev/null; then
-		echo "rofi (x11) всё ещё присутсвует в системе, пожалуйста удалите его. Возможно он собран вручную"
+		echo "rofi всё ещё присутсвует в системе, пожалуйста удалите его. Возможно он собран вручную"
 		exit 1
 	fi
 
@@ -56,14 +56,16 @@ case "$proceed" in
 	echo "Yay logs:" >> ~/spbog-dotfiles-install.log
 	echo "-------------" >> ~/spbog-dotfiles-install.log
 	sleep 0.5
-	yay -Syyu --verbose --noconfirm hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp pipewire wireplumber mako emacs nautilus alacritty >> ~/spbog-dotfiles-install.log
+	yay -S --noconfirm hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp mako emacs nautilus alacritty zoxide thefuck oh-my-posh  >> ~/spbog-dotfiles-install.log
+#	yay -S --noconfirm pipewire wireplumber >> ~/spbog-dotfiles-install.log
 	if ! yay -Qq hyprlock &> /dev/null; then
 		echo "Во время установки пакетов произошла какая-то ошибка, проверь логи (yay.log) и открой issue https://github.com/Spbog/dotfiles"
 		echo "Логи :"
 		cat ~/spbog-dotfiles-install.log
 		exit 1
 	fi
-
+        sudo pacman -S zsh lsd --noconfirm >> ~/spbog-dotfiles-install.log
+	chsh -s /bin/zsh >> ~/spbog-dotfiles-install.log
 	# Configure PipeWire
 	echo "Настройка PipeWire"
 	echo "PipeWire systemd logs:" >> ~/spbog-dotfiles-install.log
@@ -84,12 +86,16 @@ case "$proceed" in
 	cp -r config/* ~/.config
 	cp -r fonts/* ~/.fonts
 	cp -r Wallpapers/* ~/Wallpapers
+	cp -r config/zsh/.oh-my-zsh ~/.config
+	cp config/zsh/.zshrc ~/
+	cp config/zsh/omp.json ~/.config
 	echo "Дотфайлы установлены. Создаю симлинки на файлы..."
 	wal -i ~/Wallpapers/Leaves.jpg --saturate 0.2 --backend colorz
 	ln -sf ~/.cache/wal/colors-waybar.css ~/.config/waybar/colors-waybar.css
 	ln -sf ~/.cache/wal/hyprlock.conf ~/.config/hypr/hyprlock.conf
 	ln -sf ~/.cache/wal/mako-config ~/.config/mako/config
 	echo "Установка завершена! Приятного пользования моими дотфайлами:)"
+	echo "Пожалуйста, сделайте reboot"
 	echo "В случае выяснений проблем, пожалуйста, оставьте issue в гитхабе"
 	echo "https://github.com/Spbog/dotfiles"
 	;;
