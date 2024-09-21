@@ -20,7 +20,6 @@ __Реворк моих старых дотфайлов__
 | Notifications | Mako             | 
 
 ## Автоматическая установка
-Установите _git_ и _base-devel_:
 ```sh
 $ sudo pacman -Syy --needed git base-devel && git clone https://github.com/Spbog/dotfiles.git && ./install.sh
 ```
