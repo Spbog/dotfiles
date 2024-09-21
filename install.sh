@@ -64,7 +64,7 @@ case "$proceed" in
 		cat ~/spbog-dotfiles-install.log
 		exit 1
 	fi
-        sudo pacman -S zsh --noconfirm >> ~/spbog-dotfiles-install.log
+        sudo pacman -S zsh lsd --noconfirm >> ~/spbog-dotfiles-install.log
 	chsh -s /bin/zsh >> ~/spbog-dotfiles-install.log
 	# Configure PipeWire
 	echo "Настройка PipeWire"
