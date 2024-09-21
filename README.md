@@ -22,15 +22,7 @@ __Реворк моих старых дотфайлов__
 ## Автоматическая установка
 Установите _git_ и _base-devel_:
 ```sh
-$ sudo pacman -Syy --needed git base-devel
-```
-Скопируйте дотфайлы:
-```sh
-$ git clone https://github.com/Spbog/dotfiles.git
-```
-Запустите скрипт внутри командой:
-```sh
-$ ./install.sh
+$ sudo pacman -Syy --needed git base-devel && git clone https://github.com/Spbog/dotfiles.git && ./install.sh
 ```
 
 ## Ручная установка
