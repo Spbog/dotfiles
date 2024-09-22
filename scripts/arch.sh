@@ -47,13 +47,29 @@ case "$proceed" in
 	# установка пакетов для дотов
 	yay -S --noconfirm hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp mako emacs nautilus alacritty zoxide thefuck oh-my-posh  >> ~/dot-install.log
 		if ! yay -Qq hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp mako emacs nautilus alacritty zoxide thefuck oh-my-posh &> /dev/null; then
-		echo "While installing the packages, some error occurred. Check the logs, and if you can't figure it out yourself: open an issue on github. The logs can be found at ~/dot-install.log."
+		echo "While installing the packages, some error occurred. Check the logs, and if you can't figure1 it out yourself: open an issue on github. The logs can be found at ~/dot-install.log."
 		echo "Logs: "
 		cat ~/dot-install.log
 		exit 1
 	fi
 	sudo pacman -S zsh lsd --noconfirm >> ~/dot-install.log
 	chsh -s /bin/zsh >> ~/dot-install.log
+	#!/bin/bash
+
+	zsh_installed=$(pacman -Q zsh)
+
+	if [[ -z "$zsh_installed" ]]; then
+	    echo "Zsh не установлен. Пожалуйста установите его вручную"
+	fi
 	
-	
+	;;
+	[Nn]*)
+		echo "Установка отменена."
+		exit 1
+	;;
+	*)
+		echo "Неизвестный ввод $proceed"
+		exit 2
+	;;
+esac
 	
