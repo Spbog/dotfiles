@@ -78,5 +78,6 @@ $ cd .. && rm -rf dotfiles/
 | <kbd>Win</kbd> + <kbd>R</kbd> | Emacs       |
 | <kbd>Win</kbd> + <kbd>E</kbd> | Nautilus    |
 | <kbd>Win</kbd> + <kbd>Q</kbd> | Alacritty   |
+| <kbd>Win</kbd> + <kbd>P</kbd> | Power Menu  |
 | <kbd>Win</kbd> + <kbd>L</kbd> | Hyprlock    |
 
