@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# удаляем предыдущие логе
+rm ~/spbog-dotfiles-install.log
 # проверка существования файла
 if [ -r /etc/os-release ]; then
   # Читаем содержимое файла и ищем подстроки
