@@ -1,6 +1,11 @@
 #!/bin/bash
+# защита от ебланов
+if [[ $EUID -eq 0 ]]; then
+	echo "Run the script not as root"
+	exit 1
+fi
 # удаляем предыдущие логе
-rm ~/spbog-dotfiles-install.log
+[[ -f ~/dot-install.log ]] && rm -f ~/dot-install.log
 # проверка существования файла
 if [ -r /etc/os-release ]; then
   # Читаем содержимое файла и ищем подстроки
