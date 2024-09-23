@@ -1,11 +1,11 @@
 # Дотфайлы сапога с Monet
 __Реворк моих старых дотфайлов__
 
-![Скрин 1](https://github.com/Spbog/dotfiles/blob/main/screen1.jpg)
+![Скрин 1](/docs/screen1.jpg)
 
-![Скрин 2](https://github.com/Spbog/dotfiles/blob/main/screen2.jpg)
+![Скрин 2](/docs/screen2.jpg)
 
-![Скрин 3](https://github.com/Spbog/dotfiles/blob/main/screen3.jpg)
+![Скрин 3](/docs/screen3.jpg)
 ## Что используется
 | Для чего      | Что используется |
 | ------------- | ---------------- |
@@ -43,13 +43,13 @@ $ git clone https://aur.archlinux.org/yay.git && cd yay/ && makepkg -si
 $ yay -S hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp pipewire wireplumber alacritty mako emacs nautilus --noconfirm
 $ pip3 install colorz --user --break-system-packages
 ```
-Измените и скопируйте аватар профиля _avatar.jpg_
+Измените и скопируйте аватар профиля _avatar.png_
 ```sh
-$ cp avatar.jpg ~/avatar.jpg
+$ cp avatar.png ~/avatar.png
 ```
-Переместите файлы из _config/_ в _~/.config/_, а _fonts/_ в _~/.fonts/_. 
+Переместите файлы из _config/_ в _~/.config/_, а _fonts/_ в _~/.local/share/fonts/_. 
 ```sh
-$ cd dotfiles && cp -r config ~/.config && cp -r fonts ~/.fonts
+$ cd dotfiles && cp -r config ~/.config && cp -r fonts ~/.local/share/fonts/
 ```
 Скопируйте папку с обоями _"Wallpapers"_ в _~/Wallpapers_. Скопируйте туда любые обои.
 ```sh
