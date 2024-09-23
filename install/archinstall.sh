@@ -53,7 +53,7 @@ case "$proceed" in
 		exit 1
 	fi
 	sudo pacman -S zsh lsd --noconfirm >> dot-install.log
-	chsh -s /usr/bin/zsh >> dot-install.log
+	chsh -s /bin/zsh >> dot-install.log
 
 	zsh_installed=$(pacman -Q zsh)
 
