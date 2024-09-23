@@ -1,10 +1,10 @@
-#!/bin/bash
+#!/usr/bin/bash
 # начальная установка говна
 echo "Installing git and base-devel"
 echo "Pacman logs:" >> dot-install.log
 echo "-----------------" >> dot-install.log
 sleep 0.5
-sudo pacman -Syy --needed base-devel git >> ~/dot-install.log
+sudo pacman -Syy --needed base-devel git >> dot-install.log
 # проверка yay. если не установлен то ставитца автоматически хуй хуй пизда
 if ! yay --version &> /dev/null; then
 	read -p "yay is not installed! Would you like to install it? (Y/n) " yayinstall
@@ -45,15 +45,16 @@ case "$proceed" in
 	echo "-------------" >> dot-install.log
 	sleep 0.5
 	# установка пакетов для дотов
-	yay -S --noconfirm hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp mako emacs nautilus alacritty zoxide thefuck oh-my-posh  >> ~/dot-install.log
+	sudo pacman -R pulseaudio
+	yay -S --noconfirm hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp mako emacs nautilus pipewire wireplumber pavucontrol helvum alacritty zoxide thefuck oh-my-posh  >> ~/dot-install.log
 		if ! yay -Qq hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp mako emacs nautilus alacritty zoxide thefuck oh-my-posh &> /dev/null; then
-		echo "While installing the packages, some error occurred. Check the logs, and if you can't figure1 it out yourself: open an issue on github. The logs can be found at ~/dot-install.log."
+		echo "While installing the packages, some error occurred. Check the logs, and if you can't figure1 it out yourself: open an issue on github. The logs can be found at dot-install.log."
 		echo "Logs: "
 		cat dot-install.log
 		exit 1
 	fi
 	sudo pacman -S zsh lsd --noconfirm >> dot-install.log
-	chsh -s /usr/bin/zsh >> dot-install.log
+	chsh -s /bin/zsh >> dot-install.log
 
 	zsh_installed=$(pacman -Q zsh)
 

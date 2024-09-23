@@ -57,7 +57,7 @@ window#waybar.empty #window {
 }
 
 
-#mode, #bluetooth, #cpu, #disk, #memory, #temperature, #network, #pulseaudio, #idle_inhibitor, #backlight, #mpd, #clock, #temperature, #language, #custom-powermenu {
+#mode, #bluetooth, #cpu, #disk, #memory, #temperature, #network, #wireplumber, #idle_inhibitor, #backlight, #mpd, #clock, #temperature, #language, #custom-powermenu {
     margin: 6px 0px;
     padding: 0 11px;
     margin-right: 6px;
@@ -71,7 +71,7 @@ window#waybar.empty #window {
     min-width: 16px;
 }
 
-#pulseaudio, #backlight {
+#pipewire, #backlight {
     min-width: 64px;
 }
 
@@ -94,7 +94,7 @@ window#waybar.empty #window {
     min-width: 16px;
 }
 
-#pulseaudio, #backlight {
+#pipewire, #backlight {
     min-width: 64px;
 }
 
