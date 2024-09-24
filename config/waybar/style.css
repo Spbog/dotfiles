@@ -71,7 +71,7 @@ window#waybar.empty #window {
     min-width: 16px;
 }
 
-#pipewire, #backlight {
+#wireplumber, #backlight {
     min-width: 64px;
 }
 
@@ -94,7 +94,7 @@ window#waybar.empty #window {
     min-width: 16px;
 }
 
-#pipewire, #backlight {
+#wireplumber, #backlight {
     min-width: 64px;
 }
 
