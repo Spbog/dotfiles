@@ -6,7 +6,7 @@
 
     "modules-left": ["hyprland/workspaces", "hyprland/window"],
     "modules-center": ["battery", "clock", "custom/weather"],
-    "modules-right": ["tray", "pulseaudio", "network", "hyprland/language", "custom/powermenu"],
+    "modules-right": ["tray", "wireplumber", "network", "hyprland/language", "custom/powermenu"],
 
     // MODULE CONFIG
 
@@ -129,7 +129,7 @@
         "format": ""
     },
 
-    "pulseaudio": {
+    "wireplumber": {
         "format": "{icon} {volume}%",
     "format-bluetooth": " {volume}%",
     "format-muted": "",
@@ -142,15 +142,10 @@
         "car": "",
         "default": ["", "", ""]
         },
-    "scroll-step": 3,
-    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
+    "scroll-step": 5,
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-middle": "helvum"
     "on-click-right": "pavucontrol"
-    // IF YOU USE PULSEAUDIO
-    // "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +1%", 
-    // "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -1%",
-    // "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     },
 
     "hyprland/workspaces": {

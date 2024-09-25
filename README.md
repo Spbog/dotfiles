@@ -40,7 +40,8 @@ $ git clone https://aur.archlinux.org/yay.git && cd yay/ && makepkg -si
 ```
 Установите зависимости:
 ```sh
-$ yay -S hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp pipewire wireplumber alacritty mako emacs nautilus --noconfirm
+$ sudo pacman -R --noconfirm pulseaudio
+$ yay -S hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp pipewire wireplumber pavucontrol helvum alacritty mako emacs nautilus zoxide thefuck oh-my-posh --noconfirm
 $ pip3 install colorz --user --break-system-packages
 ```
 Измените и скопируйте аватар профиля _avatar.png_
