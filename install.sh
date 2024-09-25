@@ -34,8 +34,9 @@ if [[ -r /etc/os-release ]]; then
         echo "Our script does not support your distro yet"
         exit 1
     fi
+    execute_script "./install/stage2install.sh"
+    exit 0
 else
     echo "No access rights or the /etc/os-release file could not be found."
     exit 1
 fi
-
