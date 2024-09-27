@@ -144,7 +144,7 @@
         },
     "scroll-step": 5,
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-    "on-click-middle": "helvum"
+    "on-click-middle": "helvum",
     "on-click-right": "pavucontrol"
     },
 
