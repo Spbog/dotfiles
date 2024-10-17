@@ -53,13 +53,13 @@ case "$proceed" in
 		cat dot-install.log
 		exit 1
 	fi
-	sudo pacman -S zsh lsd --noconfirm >> dot-install.log
-	chsh -s /bin/zsh >> dot-install.log
+	sudo pacman -S fish --noconfirm >> dot-install.log
+	chsh -s /bin/fish >> dot-install.log
 
-	zsh_installed=$(pacman -Q zsh)
+	fish_installed=$(pacman -Q fish)
 
-	if [[ -z "$zsh_installed" ]]; then
-	    echo "Zsh is not installed, please install it manually!"
+	if [[ -z "$fish_installed" ]]; then
+	    echo "Fish is not installed, please install it manually!"
 	    exit 1
 	fi
 	;;
