@@ -9,9 +9,6 @@ mkdir -p ~/.config ~/.local/share/fonts/ ~/Wallpapers ~/.fonts
 cp -r config/* ~/.config
 cp -r fonts/* ~/.fonts
 cp -r Wallpapers/* ~/Wallpapers
-cp -r config/zsh/.oh-my-zsh ~/.config
-cp config/zsh/.zshrc ~/
-cp config/zsh/omp.json ~/.config
 echo "Done. Dotfiles has been installed!"
 echo " Creating symlnks...."
 wal -i ~/Wallpapers/Leaves.jpg --saturate 0.2 --backend colorz
