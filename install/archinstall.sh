@@ -46,15 +46,15 @@ case "$proceed" in
 	sleep 0.5
 	# установка пакетов для дотов
 	sudo pacman -R --noconfirm pulseaudio
-	yay -S --noconfirm hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp mako emacs nautilus pipewire pipewire-pulse wireplumber pavucontrol helvum alacritty zoxide thefuck oh-my-posh wl-clipboard noto-fonts-emoji brightnessctl >> ~/dot-install.log
+	yay -S --noconfirm hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp mako emacs nautilus pipewire pipewire-pulse wireplumber pavucontrol helvum alacritty zoxide thefuck oh-my-posh wl-clipboard noto-fonts-emoji brightnessctl fastfetch >> ~/dot-install.log
 		if ! yay -Qq hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp mako emacs nautilus alacritty zoxide thefuck oh-my-posh wl-clipboard noto-fonts-emoji pipewire-pulse brightnessctl &> /dev/null; then
 		echo "While installing the packages, some error occurred. Check the logs, and if you can't figure1 it out yourself: open an issue on github. The logs can be found at dot-install.log."
 		echo "Logs: "
 		cat dot-install.log
 		exit 1
 	fi
-	sudo pacman -S fish --noconfirm >> dot-install.log
-	chsh -s /bin/fish >> dot-install.log
+	yay -S --noconfirm fish fisher-git >> dot-install.log
+	chsh -s /usr/bin/fish >> dot-install.log
 
 	fish_installed=$(pacman -Q fish)
 
