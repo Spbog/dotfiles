@@ -13,7 +13,7 @@ __Реворк моих старых дотфайлов__
 | OS            | Arch Linux       |
 | Terminal      | Alacritty        |
 | File Manager  | Nautilus         |
-| Shell         | ZShell           |
+| Shell         | Fish             |
 | Text Editor   | Emacs            |
 | Launcher      | Rofi             |
 | Bar           | Waybar           |
