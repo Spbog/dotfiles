@@ -34,9 +34,9 @@ $ sudo pacman -Syy --needed git base-devel
 ```sh
 $ git clone https://github.com/Spbog/dotfiles.git && cd dotfiles/
 ```
-Установите _yay_:
+Установите _yay_ (если вы ещё это не сделали):
 ```sh
-$ git clone https://aur.archlinux.org/yay.git && cd yay/ && makepkg -si
+$ git clone https://aur.archlinux.org/yay.git && cd yay/ && makepkg -si && cd .. && rm -rf yay/
 ```
 Установите зависимости:
 ```sh
@@ -50,7 +50,7 @@ $ cp avatar.png ~/avatar.png
 ```
 Переместите файлы из _config/_ в _~/.config/_, а _fonts/_ в _~/.local/share/fonts/_. 
 ```sh
-$ cd dotfiles && cp -r config ~/.config && cp -r fonts ~/.local/share/fonts/
+$ cd dotfiles && cp -r config/* ~/.config && cp -r fonts ~/.local/share/fonts/
 ```
 Скопируйте папку с обоями _"Wallpapers"_ в _~/Wallpapers_. Скопируйте туда любые обои.
 ```sh
