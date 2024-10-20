@@ -15,4 +15,5 @@ wal -i ~/Wallpapers/Leaves.jpg --saturate 0.2 --backend colorz
 ln -sf ~/.cache/wal/colors-waybar.css ~/.config/waybar/colors-waybar.css
 ln -sf ~/.cache/wal/hyprlock.conf ~/.config/hypr/hyprlock.conf
 ln -sf ~/.cache/wal/mako-config ~/.config/mako/config
+ln -sf ~/.cache/wal/alacritty.toml ~/.config/alacritty/alacritty.toml
 echo "Done!"
