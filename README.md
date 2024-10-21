@@ -54,7 +54,7 @@ $ cp avatar.png ~/avatar.png
 ```
 Переместите файлы из _config/_ в _~/.config/_, а _fonts/_ в _~/.local/share/fonts/_. 
 ```sh
-$ cd dotfiles && cp -r config/* ~/.config && cp -r fonts ~/.local/share/fonts/
+$ cp -r config/* ~/.config && cp -r fonts ~/.local/share/fonts/
 ```
 Скопируйте папку с обоями _"Wallpapers"_ в _~/Wallpapers_. Скопируйте туда любые обои.
 ```sh
