@@ -7,12 +7,13 @@ __Реворк моих старых дотфайлов__
 
 ![Скрин 3](/docs/screen3.jpg)
 ## Что используется
-| Для чего      | Что используется |
+| Для чего      | Утилита          |
 | ------------- | ---------------- |
 | WM            | Hyprland         |
 | OS            | Arch Linux       |
 | Terminal      | Alacritty        |
 | File Manager  | Nautilus         |
+| Fetch         | FastFetch        |
 | Shell         | Fish             |
 | Text Editor   | Emacs            |
 | Launcher      | Rofi             |
@@ -75,6 +76,15 @@ $ ln -sf ~/.cache/wal/alacritty.toml ~/.config/alacritty/alacritty.toml
 ```sh
 $ cd .. && rm -rf dotfiles/
 ```
+## После установки
+### Pywalfox
+Плагин, который сделает цвета вашего браузера Firefox под цвет тех, что подобрала утилита wal
+
+[Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/pywalfox/)  [GitHub](https://github.com/Frewacom/pywalfox)
+
+### Walogram
+По пути `~/.cache/walogram` лежит динамическая тема для TGD. Импортируйте ее в тг.
+
 ## Хоткеи
 | Хоткей                        | Что делает  |
 | ----------------------------- | ----------- | 
