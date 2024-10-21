@@ -41,8 +41,12 @@ $ git clone https://aur.archlinux.org/yay.git && cd yay/ && makepkg -si && cd ..
 Установите зависимости:
 ```sh
 $ sudo pacman -R --noconfirm pulseaudio
-$ yay -S hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp pipewire wireplumber pavucontrol helvum alacritty mako emacs nautilus zoxide thefuck oh-my-posh --noconfirm
+$ yay -S --noconfirm hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp mako emacs nautilus pipewire pipewire-pulse wireplumber pavucontrol helvum alacritty zoxide thefuck oh-my-posh wl-clipboard noto-fonts-emoji brightnessctl fastfetch fish fisher-git
 $ pip3 install colorz --user --break-system-packages
+```
+Поменяйте шелл:
+```sh
+$ chsh -s /usr/bin/fish
 ```
 Измените и скопируйте аватар профиля _avatar.png_
 ```sh
