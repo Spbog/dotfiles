@@ -20,10 +20,12 @@ else
     exit 1
 fi
 swww img "$wallpaper" --transition-type grow --transition-fps 60 --transition-duration 0.5 --transition-bezier 0.65,0,0.35,1 --transition-step 1
-sleep 1.3
+sleep 1
 wal -i "$wallpaper" --backend colorz --saturate 0.2 -s -t
 walogram
-pkill waybar && waybar
+pywalfox update
+pkill waybar
+waybar
 pkill mako
 sleep 0.5
 mako
