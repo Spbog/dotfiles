@@ -1,0 +1,12 @@
+#!/bin/bash
+
+status=$(playerctl status -s)
+
+if [[ "$status" == "" ]]; then
+	echo ""
+elif [[ "$status" == "Playing" ]]; then
+	playerctl metadata --format '{{'title'}} - {{'artist'}}'
+elif [[ "$status" == "Paused" ]]; then
+	echo ""
+fi
+
