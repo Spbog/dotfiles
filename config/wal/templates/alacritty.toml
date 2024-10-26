@@ -2,7 +2,7 @@
 opacity = 0.6
 
 [font]
-normal = { family = "CartographCF", style = "Regular" }
+normal = {{ family = "CartographCF", style = "Regular" }}
 size = 10
 
 [colors.primary]
