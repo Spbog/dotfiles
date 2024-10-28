@@ -5,7 +5,7 @@ echo "---------------------" >> dot-install.log
 pip3 install colorz --user --break-system-packages >> dot-install.log
 echo "Installing dotfiles..."
 cp avatar.png ~/avatar.png
-mkdir -p ~/.config ~/.local/share/fonts/ ~/Wallpapers ~/.fonts ~/scr
+mkdir -p ~/.config ~/.local/share/fonts/ ~/Wallpapers ~/.fonts ~/scr ~/.config/alacritty/
 cp -r config/* ~/.config
 cp -r fonts/* ~/.fonts
 cp -r Wallpapers/* ~/Wallpapers
