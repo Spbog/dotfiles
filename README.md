@@ -23,7 +23,7 @@ __Реворк моих старых дотфайлов__
 
 ## Автоматическая установка
 ```sh
-$ sudo pacman -Syy --needed git base-devel && git clone https://github.com/Spbog/dotfiles.git && ./install.sh
+$ sudo pacman -Syy --needed git base-devel && git clone https://github.com/Spbog/dotfiles.git && cd dotfiles && ./install.sh
 ```
 
 ## Ручная установка
