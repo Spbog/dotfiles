@@ -1,0 +1,102 @@
+Pacman logs:
+-----------------
+:: Synchronizing package databases...
+ core downloading...
+ extra downloading...
+ there is nothing to do
+Yay logs:
+-------------
+AUR Explicit (1): fisher-git-4.3.0.r0.g247b58e0d97c785e-1
+Sync Explicit (1): fish-3.7.1-2
+:: [1mPKGBUILD up to date, skipping download: fisher-git[0m
+  1 fisher-git                               (Installed) (Build Files Exist)
+==> Packages to cleanBuild?
+==> [N]one [A]ll [Ab]ort [I]nstalled [No]tInstalled or (1 2 3, 1-3, ^4)
+==> 
+  1 fisher-git                               (Installed) (Build Files Exist)
+==> Diffs to show?
+==> [N]one [A]ll [Ab]ort [I]nstalled [No]tInstalled or (1 2 3, 1-3, ^4)
+==> 
+[1m[32m==>(B[m[1m Making package: fisher-git 4.3.0.r0.g247b58e0d97c785e-1 (Sat 22 Feb 2025 10:48:04 AM +05)(B[m
+[1m[32m==>(B[m[1m Retrieving sources...(B[m
+[1m[34m  ->(B[m[1m Updating fisher git repo...(B[m
+[1m[32m==>(B[m[1m Validating source files with sha512sums...(B[m
+:: [1m(1/1) Parsing SRCINFO: fisher-git[0m
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (1) fish-3.7.1-2
+
+Total Installed Size:  14.73 MiB
+Net Upgrade Size:       0.00 MiB
+
+:: Proceed with installation? [Y/n] 
+checking keyring...
+checking package integrity...
+loading package files...
+checking for file conflicts...
+checking available disk space...
+:: Processing package changes...
+reinstalling fish...
+:: Running post-transaction hooks...
+(1/2) Arming ConditionNeedsUpdate...
+(2/2) Updating the desktop file MIME type cache...
+[1m[32m==>(B[m[1m Making package: fisher-git 4.3.0.r0.g247b58e0d97c785e-1 (Sat 22 Feb 2025 10:48:06 AM +05)(B[m
+[1m[32m==>(B[m[1m Checking runtime dependencies...(B[m
+[1m[32m==>(B[m[1m Checking buildtime dependencies...(B[m
+[1m[32m==>(B[m[1m Retrieving sources...(B[m
+[1m[34m  ->(B[m[1m Updating fisher git repo...(B[m
+[1m[32m==>(B[m[1m Validating source files with sha512sums...(B[m
+[1m[32m==>(B[m[1m Removing existing $srcdir/ directory...(B[m
+[1m[32m==>(B[m[1m Extracting sources...(B[m
+[1m[34m  ->(B[m[1m Creating working copy of fisher git repo...(B[m
+[1m[32m==>(B[m[1m Starting pkgver()...(B[m
+[1m[32m==>(B[m[1m Updated version: fisher-git 4.4.5.r1.g1f0dc2b-1(B[m
+[1m[32m==>(B[m[1m Sources are ready.(B[m
+[1m[32m==>(B[m[1m Making package: fisher-git 4.4.5.r1.g1f0dc2b-1 (Sat 22 Feb 2025 10:48:10 AM +05)(B[m
+[1m[32m==>(B[m[1m Checking runtime dependencies...(B[m
+[1m[32m==>(B[m[1m Checking buildtime dependencies...(B[m
+[1m[32m==>(B[m[1m Starting pkgver()...(B[m
+[1m[32m==>(B[m[1m Entering fakeroot environment...(B[m
+[1m[32m==>(B[m[1m Starting package()...(B[m
+[1m[32m==>(B[m[1m Tidying install...(B[m
+[1m[34m  ->(B[m[1m Removing libtool files...(B[m
+[1m[34m  ->(B[m[1m Purging unwanted files...(B[m
+[1m[34m  ->(B[m[1m Removing static library files...(B[m
+[1m[34m  ->(B[m[1m Stripping unneeded symbols from binaries and libraries...(B[m
+[1m[34m  ->(B[m[1m Compressing man and info pages...(B[m
+[1m[32m==>(B[m[1m Checking for packaging issues...(B[m
+[1m[32m==>(B[m[1m Creating package "fisher-git"...(B[m
+[1m[34m  ->(B[m[1m Generating .PKGINFO file...(B[m
+[1m[34m  ->(B[m[1m Generating .BUILDINFO file...(B[m
+[1m[34m  ->(B[m[1m Generating .MTREE file...(B[m
+[1m[34m  ->(B[m[1m Compressing package...(B[m
+[1m[32m==>(B[m[1m Leaving fakeroot environment.(B[m
+[1m[32m==>(B[m[1m Finished making: fisher-git 4.4.5.r1.g1f0dc2b-1 (Sat 22 Feb 2025 10:48:11 AM +05)(B[m
+[1m[32m==>(B[m[1m Cleaning up...(B[m
+loading packages...
+resolving dependencies...
+looking for conflicting packages...
+
+Packages (1) fisher-git-4.4.5.r1.g1f0dc2b-1
+
+Total Installed Size:  0.02 MiB
+Net Upgrade Size:      0.00 MiB
+
+:: Proceed with installation? [Y/n] 
+checking keyring...
+checking package integrity...
+loading package files...
+checking for file conflicts...
+checking available disk space...
+:: Processing package changes...
+reinstalling fisher-git...
+:: Running post-transaction hooks...
+(1/1) Arming ConditionNeedsUpdate...
+Changing shell for hiprivsid.
+colorz pip3 logs:
+---------------------
+Requirement already satisfied: colorz in /home/hiprivsid/.local/lib/python3.13/site-packages (1.0.3)
+Requirement already satisfied: Pillow in /home/hiprivsid/.local/lib/python3.13/site-packages (from colorz) (11.1.0)
+Requirement already satisfied: scipy in /home/hiprivsid/.local/lib/python3.13/site-packages (from colorz) (1.15.2)
+Requirement already satisfied: numpy<2.5,>=1.23.5 in /home/hiprivsid/.local/lib/python3.13/site-packages (from scipy->colorz) (2.2.3)

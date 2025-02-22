@@ -46,7 +46,7 @@ case "$proceed" in
 	sleep 0.5
 	# установка пакетов для дотов
 	sudo pacman -R --noconfirm pulseaudio
-	yay -S --noconfirm hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp mako emacs nautilus pipewire pipewire-pulse wireplumber pavucontrol helvum alacritty zoxide thefuck oh-my-posh wl-clipboard noto-fonts-emoji brightnessctl fastfetch playerctl nm-connection-editor >> ~/dot-install.log
+	yay -S --noconfirm hyprland rofi-wayland waybar hyprlock walogram-git python-pywal python3 python-pip python-pywalfox swww grim slurp mako emacs nautilus pipewire pipewire-pulse wireplumber pavucontrol helvum alacritty zoxide thefuck oh-my-posh wl-clipboard noto-fonts-emoji brightnessctl fastfetch playerctl nm-connection-editor >> ~/dot-install.log
 		if ! yay -Qq hyprland rofi-wayland waybar hyprlock walogram-git pywal python3 python-pip python-pywalfox swww grim slurp mako emacs nautilus alacritty zoxide thefuck oh-my-posh wl-clipboard noto-fonts-emoji pipewire-pulse brightnessctl playerctl nm-connection-editor &> /dev/null; then
 		echo "While installing the packages, some error occurred. Check the logs, and if you can't figure1 it out yourself: open an issue on github. The logs can be found at dot-install.log."
 		echo "Logs: "
